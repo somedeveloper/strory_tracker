@@ -1,0 +1,11 @@
+- content_for(:page_header,"MY PROJECTS")
+.small_header
+  %h2
+    Default User
+.small_header_content
+  - if @projects.present?
+    - @projects.each do |project|
+      = Project.name
+  - else
+    No projects present.Create a new
+    = link_to "project", new_project_path
